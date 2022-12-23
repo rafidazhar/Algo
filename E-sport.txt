@@ -1,0 +1,48 @@
+Program Menggunakan Bahasa C
+
+
+pejuang pelosok
+Buatlah Program menggunakan bahasa c yang mengiputkan data tim dalam perlombaan E-Sport Dunia dan 
+carilah total tim lebih dari 100 dan kurang dari 100
+
+Berikut ini adalah contoh program menggunakan bahasa C yang dapat menginputkan data tim dalam perlombaan e-sport dunia dan mencari total tim yang memiliki jumlah anggota lebih dari 100 atau kurang dari 100:
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_TEAMS 50
+
+struct Team {
+char name[50];
+int members;
+};
+
+int main(void) {
+struct Team teams[MAX_TEAMS];
+int numTeams, i;
+int totalTeamsOver100 = 0;
+int totalTeamsUnder100 = 0;
+
+printf("Masukkan jumlah tim: ");
+scanf("%d", &numTeams);
+
+for (i = 0; i < numTeams; i++) {
+printf("Masukkan nama tim %d: ", i + 1);
+scanf("%s", teams[i].name);
+printf("Masukkan jumlah anggota tim %d: ", i + 1);
+scanf("%d", &teams[i].members);
+}
+
+for (i = 0; i < numTeams; i++) {
+if (teams[i].members > 100) {
+totalTeamsOver100++;
+} else {
+totalTeamsUnder100++;
+}
+}
+
+printf("Total tim dengan jumlah anggota lebih dari 100 adalah %d\n", totalTeamsOver100);
+printf("Total tim dengan jumlah anggota kurang dari 100 adalah %d\n", totalTeamsUnder100);
+
+return 0;
+}
