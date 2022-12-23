@@ -1,28 +1,27 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
-  char kalimat[50] = "Aku Senang Belajar Alpro", huruf;
-  int i, jumlah;
+    char kalimat[50] = "aku senang belajar alpro";
+    char cari;
+    int i, j = 0;
 
-    printf("====================");
-    printf("\nProgram Searching");
-    printf("\n====================");
+    printf("Masukkan huruf yang ingin dicari: ");
+    scanf("%c",&cari);
 
-    printf("\n%s", kalimat);
-
-  printf("\nMasukkan huruf yang dicari: ");
-  scanf("%c", &huruf);
-
-  jumlah = 0;
-  for (i = 0; kalimat[i] != '\0'; i++) {
-    if (kalimat[i] == huruf) {
-      jumlah++;
+    for(i=0;i<50;i++)
+    {
+        if(kalimat[i] == cari)
+        {
+            printf("Huruf '%c' ditemukan pada posisi ke-%d\n", cari, i);
+            j++;
+        }
     }
-  }
 
-  printf("Huruf '%c' ditemukan sebanyak %d kali\n", huruf, jumlah);
+    if(j == 0)
+    {
+        printf("Huruf '%c' tidak ditemukan\n", cari);
+    }
 
-  return 0;
+    return 0;
 }
