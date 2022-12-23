@@ -1,26 +1,28 @@
-Buatlah program dalam bahasa c yang dapat mencari huruf sesuai input dari user dalam kalimat "aku senang belajar alpro"
-
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-  char kalimat[50], huruf;
+  char kalimat[50] = "Aku Senang Belajar Alpro", huruf;
   int i, jumlah;
-  
-  printf("Masukkan kalimat: ");
-  scanf("%[^\n]%*c", kalimat);
-  
-  printf("Masukkan huruf yang dicari: ");
+
+    printf("====================");
+    printf("\nProgram Searching");
+    printf("\n====================");
+
+    printf("\n%s", kalimat);
+
+  printf("\nMasukkan huruf yang dicari: ");
   scanf("%c", &huruf);
-  
+
   jumlah = 0;
   for (i = 0; kalimat[i] != '\0'; i++) {
     if (kalimat[i] == huruf) {
       jumlah++;
     }
   }
-  
+
   printf("Huruf '%c' ditemukan sebanyak %d kali\n", huruf, jumlah);
-  
+
   return 0;
 }
